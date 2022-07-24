@@ -21,7 +21,7 @@ import java.lang.reflect.Type;
 /**
  * Interface representing a custom serializer for Json. You should write a custom serializer, if
  * you are not happy with the default serialization done by Gson. You will also need to register
- * this serializer through {@link com.google.gson.GsonBuilder#registerTypeAdapter(Type, Object)}.
+ * this serializer through {@link GsonBuilder#registerTypeAdapter(Type, Object)}.
  *
  * <p>Let us look at example where defining a serializer will be useful. The {@code Id} class
  * defined below has two fields: {@code clazz} and {@code value}.</p>

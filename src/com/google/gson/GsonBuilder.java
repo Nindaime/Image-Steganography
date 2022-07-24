@@ -392,8 +392,8 @@ public final class GsonBuilder {
    * call this method or {@link #setDateFormat(int)} multiple times, but only the last invocation
    * will be used to decide the serialization format.
    *
-   * <p>The date format will be used to serialize and deserialize {@link java.util.Date}, {@link
-   * java.sql.Timestamp} and {@link java.sql.Date}.
+   * <p>The date format will be used to serialize and deserialize {@link Date}, {@link
+   * Timestamp} and {@link java.sql.Date}.
    *
    * <p>Note that this pattern must abide by the convention provided by {@code SimpleDateFormat}
    * class. See the documentation in {@link java.text.SimpleDateFormat} for more information on
@@ -415,7 +415,7 @@ public final class GsonBuilder {
    * invocation will be used to decide the serialization format.
    *
    * <p>Note that this style value should be one of the predefined constants in the
-   * {@code DateFormat} class. See the documentation in {@link java.text.DateFormat} for more
+   * {@code DateFormat} class. See the documentation in {@link DateFormat} for more
    * information on the valid style constants.</p>
    *
    * @param style the predefined date style that date objects will be serialized/deserialized
@@ -435,7 +435,7 @@ public final class GsonBuilder {
    * invocation will be used to decide the serialization format.
    *
    * <p>Note that this style value should be one of the predefined constants in the
-   * {@code DateFormat} class. See the documentation in {@link java.text.DateFormat} for more
+   * {@code DateFormat} class. See the documentation in {@link DateFormat} for more
    * information on the valid style constants.</p>
    *
    * @param dateStyle the predefined date style that date objects will be serialized/deserialized

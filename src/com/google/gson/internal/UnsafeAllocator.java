@@ -108,7 +108,7 @@ public abstract class UnsafeAllocator {
 
   /**
    * Check if the class can be instantiated by unsafe allocator. If the instance has interface or abstract modifiers
-   * throw an {@link java.lang.UnsupportedOperationException}
+   * throw an {@link UnsupportedOperationException}
    * @param c instance of the class to be checked
    */
   static void assertInstantiable(Class<?> c) {

@@ -80,7 +80,7 @@ import com.google.gson.reflect.TypeToken;
  * mapping from lowercase name to enum value is computed eagerly.
  *
  * <p>As with type adapters, factories must be <i>registered</i> with a {@link
- * com.google.gson.GsonBuilder} for them to take effect: <pre>   {@code
+ * GsonBuilder} for them to take effect: <pre>   {@code
  *
  *  GsonBuilder builder = new GsonBuilder();
  *  builder.registerTypeAdapterFactory(new LowercaseEnumTypeAdapterFactory());

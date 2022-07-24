@@ -94,7 +94,7 @@ import com.google.gson.stream.MalformedJsonException;
  * <p>See the <a href="https://sites.google.com/site/gson/gson-user-guide">Gson User Guide</a>
  * for a more complete set of examples.</p>
  *
- * @see com.google.gson.reflect.TypeToken
+ * @see TypeToken
  *
  * @author Inderjeet Singh
  * @author Joel Leitch
@@ -149,7 +149,7 @@ public final class Gson {
    *   by setting {@link GsonBuilder#serializeNulls()}.</li>
    *   <li>Gson provides default serialization and deserialization for Enums, {@link Map},
    *   {@link java.net.URL}, {@link java.net.URI}, {@link java.util.Locale}, {@link java.util.Date},
-   *   {@link java.math.BigDecimal}, and {@link java.math.BigInteger} classes. If you would prefer
+   *   {@link BigDecimal}, and {@link BigInteger} classes. If you would prefer
    *   to change the default representation, you can do so by registering a type adapter through
    *   {@link GsonBuilder#registerTypeAdapter(Type, Object)}. </li>
    *   <li>The default Date format is same as {@link java.text.DateFormat#DEFAULT}. This format
@@ -549,7 +549,7 @@ public final class Gson {
    *
    * @param src the object for which JSON representation is to be created
    * @param typeOfSrc The specific genericized type of src. You can obtain
-   * this type by using the {@link com.google.gson.reflect.TypeToken} class. For example,
+   * this type by using the {@link TypeToken} class. For example,
    * to get the type for {@code Collection<Foo>}, you should use:
    * <pre>
    * Type typeOfSrc = new TypeToken&lt;Collection&lt;Foo&gt;&gt;(){}.getType();
@@ -591,7 +591,7 @@ public final class Gson {
    *
    * @param src the object for which JSON representation is to be created
    * @param typeOfSrc The specific genericized type of src. You can obtain
-   * this type by using the {@link com.google.gson.reflect.TypeToken} class. For example,
+   * this type by using the {@link TypeToken} class. For example,
    * to get the type for {@code Collection<Foo>}, you should use:
    * <pre>
    * Type typeOfSrc = new TypeToken&lt;Collection&lt;Foo&gt;&gt;(){}.getType();
@@ -633,7 +633,7 @@ public final class Gson {
    *
    * @param src the object for which JSON representation is to be created
    * @param typeOfSrc The specific genericized type of src. You can obtain
-   * this type by using the {@link com.google.gson.reflect.TypeToken} class. For example,
+   * this type by using the {@link TypeToken} class. For example,
    * to get the type for {@code Collection<Foo>}, you should use:
    * <pre>
    * Type typeOfSrc = new TypeToken&lt;Collection&lt;Foo&gt;&gt;(){}.getType();
@@ -783,7 +783,7 @@ public final class Gson {
    * @param <T> the type of the desired object
    * @param json the string from which the object is to be deserialized
    * @param typeOfT The specific genericized type of src. You can obtain this type by using the
-   * {@link com.google.gson.reflect.TypeToken} class. For example, to get the type for
+   * {@link TypeToken} class. For example, to get the type for
    * {@code Collection<Foo>}, you should use:
    * <pre>
    * Type typeOfT = new TypeToken&lt;Collection&lt;Foo&gt;&gt;(){}.getType();
@@ -836,7 +836,7 @@ public final class Gson {
    * @param <T> the type of the desired object
    * @param json the reader producing Json from which the object is to be deserialized
    * @param typeOfT The specific genericized type of src. You can obtain this type by using the
-   * {@link com.google.gson.reflect.TypeToken} class. For example, to get the type for
+   * {@link TypeToken} class. For example, to get the type for
    * {@code Collection<Foo>}, you should use:
    * <pre>
    * Type typeOfT = new TypeToken&lt;Collection&lt;Foo&gt;&gt;(){}.getType();
@@ -935,7 +935,7 @@ public final class Gson {
    * @param json the root of the parse tree of {@link JsonElement}s from which the object is to
    * be deserialized
    * @param typeOfT The specific genericized type of src. You can obtain this type by using the
-   * {@link com.google.gson.reflect.TypeToken} class. For example, to get the type for
+   * {@link TypeToken} class. For example, to get the type for
    * {@code Collection<Foo>}, you should use:
    * <pre>
    * Type typeOfT = new TypeToken&lt;Collection&lt;Foo&gt;&gt;(){}.getType();

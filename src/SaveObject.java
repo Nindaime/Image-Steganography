@@ -6,7 +6,7 @@
 
 /**
  *
- * @author Ken8
+ * @author Peter
  */
 public class SaveObject {
 

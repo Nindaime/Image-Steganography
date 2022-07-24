@@ -131,7 +131,7 @@ public abstract class TypeAdapter<T> {
    * Unlike Gson's similar {@link Gson#toJson(JsonElement, Appendable) toJson}
    * method, this write is strict. Create a {@link
    * JsonWriter#setLenient(boolean) lenient} {@code JsonWriter} and call
-   * {@link #write(com.google.gson.stream.JsonWriter, Object)} for lenient
+   * {@link #write(JsonWriter, Object)} for lenient
    * writing.
    *
    * @param value the Java object to convert. May be null.
@@ -205,7 +205,7 @@ public abstract class TypeAdapter<T> {
    * Converts {@code value} to a JSON document. Unlike Gson's similar {@link
    * Gson#toJson(Object) toJson} method, this write is strict. Create a {@link
    * JsonWriter#setLenient(boolean) lenient} {@code JsonWriter} and call
-   * {@link #write(com.google.gson.stream.JsonWriter, Object)} for lenient
+   * {@link #write(JsonWriter, Object)} for lenient
    * writing.
    *
    * @param value the Java object to convert. May be null.
@@ -248,7 +248,7 @@ public abstract class TypeAdapter<T> {
 
   /**
    * Converts the JSON document in {@code in} to a Java object. Unlike Gson's
-   * similar {@link Gson#fromJson(java.io.Reader, Class) fromJson} method, this
+   * similar {@link Gson#fromJson(Reader, Class) fromJson} method, this
    * read is strict. Create a {@link JsonReader#setLenient(boolean) lenient}
    * {@code JsonReader} and call {@link #read(JsonReader)} for lenient reading.
    *

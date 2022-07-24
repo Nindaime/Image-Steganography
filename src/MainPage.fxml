@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="container" prefHeight="600.0" prefWidth="1215.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainPageController">
+  <children>
+    <MenuBar onMouseClicked="#requestfocus" onMouseDragged="#pick" onMouseEntered="#requestfocus" onMousePressed="#determine" onMouseReleased="#drop" VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem id="btnCloseMnWindow" mnemonicParsing="false" onAction="#mainCloseButtonAction" text="Quit" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <SplitPane dividerPositions="0.43446001648804616, 0.5655399835119538" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+      <items>
+        <AnchorPane fx:id="aPaneWindow1" prefHeight="551.0" prefWidth="365.0">
+          <children>
+            <Label alignment="CENTER" layoutX="234.0" layoutY="-1.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Window 1" textAlignment="CENTER" wrapText="false">
+              <font>
+                <Font name="Candara Bold" size="24.0" fx:id="x1" />
+              </font>
+              <textFill>
+                <Color red="0.624" green="0.624" blue="0.624" fx:id="x2" />
+              </textFill>
+            </Label>
+                  <ImageView fx:id="imgV_Window1" fitHeight="390.0" fitWidth="524.0" layoutX="84.0" layoutY="146.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0" />
+                  <Label fx:id="lblWindow1Notification" layoutX="70.0" layoutY="250.0" text="INPUT COVER IMAGE">
+                     <font>
+                        <Font name="Comic Sans MS" size="36.0" />
+                     </font>
+                  </Label>
+          </children>
+        </AnchorPane>
+        <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="551.0" prefWidth="151.0">
+          <content>
+                  <VBox prefHeight="551.0" prefWidth="165.0" spacing="17.0">
+                     <children>
+                        <AnchorPane>
+                           <children>
+                      <Label alignment="CENTER" font="$x1" layoutX="32.0" layoutY="-1.0" style="&#10;" text="Controls" textAlignment="CENTER" textFill="$x2" wrapText="false" />
+                           </children>
+                        </AnchorPane>
+                        <BorderPane fx:id="ctrlPanel1">
+                           <center>
+                              <ToolBar prefHeight="40.0" prefWidth="153.0">
+                                <items>
+                                  <Button fx:id="btnCoverImage" mnemonicParsing="false" onAction="#selectImage" text="C-Image" />
+                                    <Button fx:id="btnHiddenImage" mnemonicParsing="false" onAction="#selectImage" text="H-Image" />
+                                </items>
+                                 <BorderPane.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </BorderPane.margin>
+                              </ToolBar>
+                           </center>
+                           <bottom>
+                              <Button mnemonicParsing="false" onAction="#extraMessage" text="Extract Image" BorderPane.alignment="CENTER" />
+                           </bottom>
+                           <top>
+                              <AnchorPane BorderPane.alignment="CENTER">
+                                 <children>
+                                    <Label layoutX="27.0" text="Selection 1" textAlignment="CENTER">
+                                       <font>
+                                          <Font name="Candara Light" size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </top>
+                        </BorderPane>
+                        <BorderPane fx:id="ctrlPanel2" layoutX="10.0" layoutY="64.0">
+                           <center>
+                              <ToolBar prefHeight="40.0" prefWidth="153.0">
+                                 <items>
+                                    <Button fx:id="btnCoverImage" mnemonicParsing="false" onAction="#selectImage" text="C-Image" />
+                                    <Button fx:id="btnHiddenImage" mnemonicParsing="false" onAction="#selectImage" text="H-Image" />
+                                 </items>
+                                 <BorderPane.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </BorderPane.margin>
+                              </ToolBar>
+                           </center>
+                           <bottom>
+                              <Button mnemonicParsing="false" onAction="#extraMessage" text="Extract Image" BorderPane.alignment="CENTER" />
+                           </bottom>
+                           <top>
+                              <AnchorPane BorderPane.alignment="CENTER">
+                                 <children>
+                                    <Label layoutX="27.0" text="Selection 2" textAlignment="CENTER">
+                                       <font>
+                                          <Font name="Candara Light" size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </top>
+                        </BorderPane>
+                        <BorderPane fx:id="ctrlPanel3" layoutX="10.0" layoutY="514.0">
+                           <center>
+                              <ToolBar prefHeight="40.0" prefWidth="153.0">
+                                 <items>
+                                    <Button mnemonicParsing="false" onAction="#selectImage" text="C-Image" />
+                                    <Button mnemonicParsing="false" onAction="#selectImage" text="H-Image" />
+                                 </items>
+                                 <BorderPane.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </BorderPane.margin>
+                              </ToolBar>
+                           </center>
+                           <bottom>
+                              <Button mnemonicParsing="false" onAction="#extraMessage" text="Extract Image" BorderPane.alignment="CENTER" />
+                           </bottom>
+                           <top>
+                              <AnchorPane BorderPane.alignment="CENTER">
+                                 <children>
+                                    <Label layoutX="27.0" text="Selection 3" textAlignment="CENTER">
+                                       <font>
+                                          <Font name="Candara Light" size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </top>
+                        </BorderPane>
+                        <BorderPane fx:id="ctrlPanel4" layoutX="10.0" layoutY="624.0">
+                           <center>
+                              <ToolBar prefHeight="40.0" prefWidth="153.0">
+                                 <items>
+                                    <Button mnemonicParsing="false" onAction="#selectImage" text="C-Image" />
+                                    <Button mnemonicParsing="false" onAction="#selectImage" text="H-Image" />
+                                 </items>
+                                 <BorderPane.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </BorderPane.margin>
+                              </ToolBar>
+                           </center>
+                           <bottom>
+                              <Button mnemonicParsing="false" onAction="#extraMessage" text="Extract Image" BorderPane.alignment="CENTER" />
+                           </bottom>
+                           <top>
+                              <AnchorPane BorderPane.alignment="CENTER">
+                                 <children>
+                                    <Label layoutX="27.0" text="Selection 4" textAlignment="CENTER">
+                                       <font>
+                                          <Font name="Candara Light" size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </top>
+                        </BorderPane>
+                        <BorderPane fx:id="ctrlPanel5" layoutX="10.0" layoutY="734.0">
+                           <center>
+                              <ToolBar prefHeight="40.0" prefWidth="153.0">
+                                 <items>
+                                    <Button mnemonicParsing="false" onAction="#selectImage" text="C-Image" />
+                                    <Button mnemonicParsing="false" onAction="#selectImage" text="H-Image" />
+                                 </items>
+                                 <BorderPane.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </BorderPane.margin>
+                              </ToolBar>
+                           </center>
+                           <bottom>
+                              <Button mnemonicParsing="false" onAction="#extraMessage" text="Extract Image" BorderPane.alignment="CENTER" />
+                           </bottom>
+                           <top>
+                              <AnchorPane BorderPane.alignment="CENTER">
+                                 <children>
+                                    <Label layoutX="27.0" text="Selection 5" textAlignment="CENTER">
+                                       <font>
+                                          <Font name="Candara Light" size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </top>
+                        </BorderPane>
+                     </children>
+                  </VBox>
+          </content>
+        </ScrollPane>
+        <AnchorPane fx:id="aPaneWindow2" prefHeight="551.0" prefWidth="377.0">
+          <children>
+            <Label alignment="CENTER" layoutX="209.0" layoutY="-1.0" style="&#10;" text="Window 2" textAlignment="CENTER" textFill="$x2" wrapText="false">
+                     <font>
+                        <Font name="Candara Bold" size="24.0" />
+                     </font></Label>
+                  <ImageView fx:id="imgV_Window2" fitHeight="390.0" fitWidth="524.0" layoutX="5.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0" />
+                  <Label fx:id="lblWindow2Notification" layoutX="52.0" layoutY="250.0" prefHeight="51.0" prefWidth="421.0" text="INPUT HIDDEN IMAGE">
+                     <font>
+                        <Font name="Comic Sans MS" size="36.0" />
+                     </font>
+                  </Label>
+          </children>
+        </AnchorPane>
+      </items>
+    </SplitPane>
+    <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" VBox.vgrow="NEVER">
+      <children>
+        <Label maxHeight="1.7976931348623157E308" maxWidth="-1.0" text="Left status" HBox.hgrow="ALWAYS">
+          <font>
+            <Font size="11.0" fx:id="x3" />
+          </font>
+          <textFill>
+            <Color red="0.625" green="0.625" blue="0.625" fx:id="x4" />
+          </textFill>
+        </Label>
+            <ProgressBar prefHeight="17.0" prefWidth="1080.0" progress="0.0" />
+        <Pane prefHeight="-1.0" prefWidth="-1.0" HBox.hgrow="ALWAYS" />
+        <Label font="$x3" maxWidth="-1.0" text="Right status" textFill="$x4" HBox.hgrow="NEVER" />
+      </children>
+      <padding>
+        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+      </padding>
+    </HBox>
+  </children>
+</VBox>
